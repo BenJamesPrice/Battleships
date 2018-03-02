@@ -13,8 +13,6 @@ public class Grid {
 	}
 	
 	public ArrayList<String> getNewLocationCells() {
-		//String alphabet = "ABCDEFG";
-		
 		ArrayList<String> locations = new ArrayList<String>();
 		String letter = columns.get((int) (Math.random() * columns.size()));
 		int startingNumber = (int) (Math.random() * 5);
@@ -22,19 +20,9 @@ public class Grid {
 		for (int i = 0; i < 3; i++) {
 			String number = Integer.toString(startingNumber + i);
 			locations.add(letter+number);
-			System.out.println(letter+number);
 		}
 		
 		return locations;
 	}
-	
-	/*
-	public void displayGrid() {
-		for (int i = 0; i<grid.length; i++) {
-			for (int j = 0; j<grid[i].length; j++) {
-				System.out.print(grid[i][j]);
-			}
-			System.out.println();
-		}
-	}*/
+
 }

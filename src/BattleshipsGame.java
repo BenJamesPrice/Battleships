@@ -33,9 +33,13 @@ public class BattleshipsGame {
 	
 	//Continues playing the game while there are ships alive
 	private void startGame() {
+		String coords;
+		String result;
 		while (!ships.isEmpty()) {
-			String guess = getUserInput("Enter guess: ");
-			checkUserGuess(guess);
+			coords = getUserInput("Enter guess: ");
+			result = checkUserGuess(coords);
+			System.out.println(result);
+			grid.updateGrid(coords, result);
 		}
 		finishGame();
 	}
@@ -56,7 +60,7 @@ public class BattleshipsGame {
 	}
 	
 	//Compares the user's guess to each ship's locations
-	private void checkUserGuess(String guess) {
+	private String checkUserGuess(String guess) {
 		numOfGuesses++;
 		String result = "miss";
 		for (Ship s : ships) {
@@ -68,7 +72,7 @@ public class BattleshipsGame {
 				break;
 			}
 		}
-		System.out.println(result);
+		return result;
 	}
 	
 	//Prints out messages once game is over

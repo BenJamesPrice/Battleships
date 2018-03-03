@@ -12,9 +12,15 @@ public class Grid {
 		}
 	}
 	
+	public void updateGrid(String coords, String result) {
+		
+	}
+	
 	public ArrayList<String> getNewLocationCells() {
 		ArrayList<String> locations = new ArrayList<String>();
-		String letter = columns.get((int) (Math.random() * columns.size()));
+		int index = (int) (Math.random() * columns.size());
+		String letter = columns.get(index);
+		columns.remove(index);
 		int startingNumber = (int) (Math.random() * 5);
 		
 		for (int i = 0; i < 3; i++) {

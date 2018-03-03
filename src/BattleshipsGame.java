@@ -40,6 +40,7 @@ public class BattleshipsGame {
 			result = checkUserGuess(coords);
 			System.out.println(result);
 			grid.updateGrid(coords, result);
+			grid.displayGrid();
 		}
 		finishGame();
 	}

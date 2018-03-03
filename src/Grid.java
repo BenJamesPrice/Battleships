@@ -23,8 +23,12 @@ public class Grid {
 		}
 	}
 	
+	//Display the 7x7 grid. Each cell either shows as m, h or ?
 	public void displayGrid() {
+		String alphabet = "ABCDEFG";
+		System.out.println(" 0123456");
 		for (int i = 0; i<grid.length; i++) {
+			System.out.print(String.valueOf(alphabet.charAt(i)));
 			for (int j = 0; j<grid[i].length; j++) {
 				System.out.print(grid[i][j]);
 			}
